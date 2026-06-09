@@ -59,7 +59,7 @@ export default function Footer() {
               GitHub
               <ArrowUpRight size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
-            <a href="mailto:jjv2025@hlproject.org"
+            <a href="mailto:valenzuela.justinejurel@gmail.com"
               className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors">
               <Mail size={14} />
               Email

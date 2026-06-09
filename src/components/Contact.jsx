@@ -82,7 +82,7 @@ export default function Contact() {
 
             {status === 'error' && (
               <p className="text-sm text-red-400 bg-red-500/8 border border-red-500/15 rounded-xl px-4 py-3">
-                Something went wrong. Email me at jjv2025@hlproject.org
+                Something went wrong. Email me at valenzuela.justinejurel@gmail.com
               </p>
             )}
 
