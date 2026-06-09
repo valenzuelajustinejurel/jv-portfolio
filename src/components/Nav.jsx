@@ -32,7 +32,7 @@ export default function Nav() {
               <span className="text-white text-xs font-black">JV</span>
             </div>
             <span className="font-bold text-white text-sm tracking-tight hidden sm:block">
-              Justine Valenzuela
+              Meet Justine
             </span>
           </a>
 
