@@ -68,7 +68,7 @@ export default function About() {
 
           {/* Right — bio + project + skills */}
           <div>
-            <p className="text-xs font-bold text-indigo-400 uppercase tracking-[0.15em] mb-6">Who I am</p>
+            <p className="text-xs font-bold text-indigo-400 uppercase tracking-[0.15em] mb-6">Meet Justine</p>
 
             <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-6">
               Real experience.<br />Not just demos.
