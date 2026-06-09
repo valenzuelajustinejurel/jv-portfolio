@@ -34,13 +34,13 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-4 gap-4 items-stretch">
           {steps.map((step, i) => (
-            <div key={step.number} className="relative">
+            <div key={step.number} className="relative flex flex-col">
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-6 left-[calc(100%_-_8px)] w-full h-px bg-gradient-to-r from-indigo-500/30 to-transparent z-0" />
               )}
-              <div className="relative bg-gray-900/40 border border-white/5 rounded-2xl p-6">
+              <div className="relative bg-gray-900/40 border border-white/5 rounded-2xl p-6 flex flex-col flex-1">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-600/30 to-violet-600/20 border border-indigo-500/20 flex items-center justify-center mb-5">
                   <span className="text-sm font-black text-indigo-300">{step.number}</span>
                 </div>
