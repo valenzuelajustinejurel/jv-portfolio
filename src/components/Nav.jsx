@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 
 const links = [
   { label: 'About', href: '#about' },
@@ -7,7 +7,7 @@ const links = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export default function Nav() {
+export default function Nav({ theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -49,8 +49,18 @@ export default function Nav() {
             ))}
           </div>
 
-          {/* CTA + hamburger */}
-          <div className="flex items-center gap-3">
+          {/* Theme toggle + CTA + hamburger */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onToggleTheme}
+              className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/8 transition-all duration-200"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark'
+                ? <Sun size={16} />
+                : <Moon size={16} className="text-indigo-500" />
+              }
+            </button>
             <a
               href="#contact"
               className="hidden md:inline-flex items-center bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-200 shadow-lg shadow-indigo-600/20 hover:shadow-indigo-500/30"
@@ -73,7 +83,7 @@ export default function Nav() {
       <div className={`fixed inset-x-0 top-16 z-40 md:hidden transition-all duration-300 ${
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
-        <div className="bg-[#050509]/95 backdrop-blur-xl border-b border-white/[0.06] px-6 py-4 space-y-1">
+        <div className="mobile-menu-panel bg-[#050509]/95 backdrop-blur-xl border-b border-white/[0.06] px-6 py-4 space-y-1">
           {links.map(({ label, href }) => (
             <a
               key={label}
@@ -84,7 +94,7 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <div className="pt-3 pb-1">
+          <div className="pt-3 pb-1 flex flex-col gap-2">
             <a
               href="#contact"
               onClick={() => setOpen(false)}

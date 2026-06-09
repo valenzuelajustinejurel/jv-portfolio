@@ -9,6 +9,7 @@
     color: #f1f5f9;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -42,4 +43,125 @@ textarea:-webkit-autofill:focus {
     transform: translateY(-2px);
     box-shadow: 0 0 0 1px rgba(99,102,241,0.3), 0 20px 40px -12px rgba(0,0,0,0.6);
   }
+}
+
+/* ============================================================
+   LIGHT MODE
+   ============================================================ */
+
+html.light body {
+  background-color: #f0f4ff;
+  color: #0f172a;
+}
+
+html.light .dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.07) 1px, transparent 0);
+}
+
+html.light .gradient-text {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.light .card-hover:hover {
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.25), 0 20px 40px -12px rgba(99,102,241,0.12);
+}
+
+/* Text */
+html.light .text-white          { color: #0f172a !important; }
+html.light .text-gray-100       { color: #1e293b !important; }
+html.light .text-gray-300       { color: #334155 !important; }
+html.light .text-gray-400       { color: #475569 !important; }
+html.light .text-gray-500       { color: #64748b !important; }
+html.light .text-gray-600       { color: #94a3b8 !important; }
+html.light .text-gray-700       { color: #cbd5e1 !important; }
+
+/* Cards & surfaces */
+html.light [class*="bg-gray-900"] {
+  background-color: rgba(255,255,255,0.75) !important;
+}
+html.light [class*="bg-white/3"],
+html.light [class*="bg-white/4"],
+html.light [class*="bg-white/5"],
+html.light [class*="bg-white/6"],
+html.light [class*="bg-white/8"] {
+  background-color: rgba(99,102,241,0.06) !important;
+}
+
+/* Borders */
+html.light [class*="border-white/"] {
+  border-color: rgba(99,102,241,0.14) !important;
+}
+
+/* Nav */
+html.light nav {
+  background-color: rgba(240,244,255,0.92) !important;
+  border-bottom-color: rgba(99,102,241,0.12) !important;
+  backdrop-filter: blur(20px);
+}
+
+/* Mobile menu */
+html.light .mobile-menu-panel {
+  background-color: rgba(240,244,255,0.97) !important;
+  border-bottom-color: rgba(99,102,241,0.1) !important;
+}
+
+/* Contact inputs */
+html.light #contact input,
+html.light #contact textarea {
+  background-color: #ffffff !important;
+  border-color: rgba(99,102,241,0.18) !important;
+  color: #0f172a !important;
+}
+html.light #contact input:focus,
+html.light #contact textarea:focus {
+  background-color: #f8faff !important;
+  border-color: rgba(99,102,241,0.45) !important;
+}
+html.light #contact input::placeholder,
+html.light #contact textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Autofill in light mode */
+html.light input:-webkit-autofill,
+html.light input:-webkit-autofill:hover,
+html.light input:-webkit-autofill:focus,
+html.light textarea:-webkit-autofill {
+  -webkit-text-fill-color: #0f172a !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  caret-color: #0f172a;
+}
+
+/* Footer */
+html.light footer {
+  border-top-color: rgba(99,102,241,0.1) !important;
+}
+
+/* ============================================================
+   PHOTO CARD — always dark regardless of mode
+   ============================================================ */
+html.light .photo-dark-card {
+  background: linear-gradient(160deg, #0d0d1a, #111128);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* Restore dark text/borders inside the dark photo card */
+html.light .photo-dark-card .text-white      { color: #f1f5f9 !important; }
+html.light .photo-dark-card .text-gray-400   { color: #94a3b8 !important; }
+html.light .photo-dark-card .text-gray-500   { color: #64748b !important; }
+html.light .photo-dark-card [class*="border-white/"] {
+  border-color: rgba(255,255,255,0.08) !important;
+}
+html.light .photo-dark-card [class*="bg-white/4"],
+html.light .photo-dark-card [class*="bg-white/8"] {
+  background-color: rgba(255,255,255,0.04) !important;
+}
+html.light .photo-dark-card [class*="bg-gray-900"] {
+  background-color: rgba(255,255,255,0.04) !important;
 }

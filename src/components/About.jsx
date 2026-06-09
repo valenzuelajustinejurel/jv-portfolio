@@ -24,8 +24,8 @@ export default function About() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-[280px_1fr] gap-12 md:gap-16 items-start">
 
-          {/* Left — photo card */}
-          <div className="flex flex-col items-center md:items-start gap-4">
+          {/* Left — photo card (stays dark in both themes) */}
+          <div className="photo-dark-card flex flex-col items-center md:items-start gap-4">
             <div className="relative">
               {/* Glow behind photo */}
               <div className="absolute inset-0 rounded-3xl bg-indigo-600/20 blur-2xl scale-95 translate-y-2" />
