@@ -3,7 +3,7 @@ import { Send, Zap } from 'lucide-react'
 
 const WEBHOOK_URL = import.meta.env.VITE_N8N_LEAD_WEBHOOK_URL
 
-const inputClass = 'w-full bg-white/4 border border-white/8 focus:border-indigo-500/60 focus:bg-white/6 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 outline-none transition-all duration-200'
+const inputClass = 'w-full bg-[#0d0d14] border border-white/10 focus:border-indigo-500/60 focus:bg-[#111118] rounded-xl px-4 py-3.5 text-gray-100 text-sm placeholder-gray-600 outline-none transition-all duration-200'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
