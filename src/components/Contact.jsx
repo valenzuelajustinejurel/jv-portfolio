@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Send, Zap } from 'lucide-react'
 
-const WEBHOOK_URL = import.meta.env.VITE_N8N_LEAD_WEBHOOK_URL
-
 const inputClass = 'w-full bg-[#0d0d14] border border-white/10 focus:border-indigo-500/60 focus:bg-[#111118] rounded-xl px-4 py-3.5 text-gray-100 text-sm placeholder-gray-600 outline-none transition-all duration-200'
 
 export default function Contact() {
@@ -13,13 +11,12 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!WEBHOOK_URL) { setStatus('error'); return }
     setStatus('sending')
     try {
-      await fetch(WEBHOOK_URL, {
+      await fetch('/.netlify/functions/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'portfolio-contact' }),
+        body: JSON.stringify(form),
       })
       setStatus('sent')
       setForm({ name: '', email: '', phone: '', message: '' })
