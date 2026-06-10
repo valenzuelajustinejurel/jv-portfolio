@@ -69,14 +69,22 @@ html.light .card-hover:hover {
   box-shadow: 0 0 0 1px rgba(99,102,241,0.25), 0 20px 40px -12px rgba(99,102,241,0.12);
 }
 
-/* Text */
+/* Text — neutral grays */
 html.light .text-white          { color: #0f172a !important; }
 html.light .text-gray-100       { color: #1e293b !important; }
 html.light .text-gray-300       { color: #334155 !important; }
 html.light .text-gray-400       { color: #475569 !important; }
 html.light .text-gray-500       { color: #64748b !important; }
 html.light .text-gray-600       { color: #94a3b8 !important; }
-html.light .text-gray-700       { color: #cbd5e1 !important; }
+html.light .text-gray-700       { color: #94a3b8 !important; }
+
+/* Indigo text — too faint on light bg */
+html.light .text-indigo-300     { color: #4338ca !important; }
+html.light .text-indigo-400     { color: #4f46e5 !important; }
+
+/* Emerald/green badge text — too faint on light bg */
+html.light .text-emerald-300    { color: #047857 !important; }
+html.light .text-emerald-400    { color: #059669 !important; }
 
 /* Cards & surfaces */
 html.light [class*="bg-gray-900"] {
@@ -88,6 +96,11 @@ html.light [class*="bg-white/5"],
 html.light [class*="bg-white/6"],
 html.light [class*="bg-white/8"] {
   background-color: rgba(99,102,241,0.06) !important;
+}
+
+/* Tools section CDN logos using /ffffff (white) become invisible on light card bg */
+html.light #tools img {
+  filter: brightness(0) opacity(0.55);
 }
 
 /* Borders */
@@ -135,6 +148,20 @@ html.light textarea:-webkit-autofill {
   caret-color: #0f172a;
 }
 
+/* Hover states — prevent white text/borders on light bg */
+html.light [class*="hover:text-white"]:hover {
+  color: #0f172a !important;
+}
+html.light .group:hover [class*="group-hover:text-white"] {
+  color: #0f172a !important;
+}
+html.light [class*="hover:border-white/"]:hover {
+  border-color: rgba(99,102,241,0.3) !important;
+}
+html.light .group:hover [class*="group-hover:border-white/"] {
+  border-color: rgba(99,102,241,0.3) !important;
+}
+
 /* Footer */
 html.light footer {
   border-top-color: rgba(99,102,241,0.1) !important;
@@ -152,9 +179,10 @@ html.light .photo-dark-card {
 }
 
 /* Restore dark text/borders inside the dark photo card */
-html.light .photo-dark-card .text-white      { color: #f1f5f9 !important; }
-html.light .photo-dark-card .text-gray-400   { color: #94a3b8 !important; }
-html.light .photo-dark-card .text-gray-500   { color: #64748b !important; }
+html.light .photo-dark-card .text-white        { color: #f1f5f9 !important; }
+html.light .photo-dark-card .text-gray-400     { color: #94a3b8 !important; }
+html.light .photo-dark-card .text-gray-500     { color: #64748b !important; }
+html.light .photo-dark-card .text-indigo-400   { color: #818cf8 !important; }
 html.light .photo-dark-card [class*="border-white/"] {
   border-color: rgba(255,255,255,0.08) !important;
 }

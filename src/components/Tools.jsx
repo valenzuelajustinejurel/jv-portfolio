@@ -83,7 +83,7 @@ function LogoImg({ src, alt, icon }) {
 
 export default function Tools() {
   return (
-    <section className="py-28 px-6">
+    <section id="tools" className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
 
         <div className="mb-16">
