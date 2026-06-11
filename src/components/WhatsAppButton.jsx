@@ -28,7 +28,7 @@ export default function WhatsAppButton() {
       <div
         id="wa-popup"
         aria-hidden={!isOpen}
-        inert={!isOpen ? '' : undefined}
+        inert={!isOpen || undefined}
         className={`w-72 bg-[#0d0d14] border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-200 ${
           isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none'
         }`}
