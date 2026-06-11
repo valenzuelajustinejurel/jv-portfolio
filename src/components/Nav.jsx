@@ -61,12 +61,12 @@ export default function Nav({ theme, onToggleTheme }) {
                 : <Moon size={16} className="text-indigo-500" />
               }
             </button>
-            <a
-              href="#contact"
+            <button
+              onClick={() => window.Calendly?.initPopupWidget({ url: 'https://calendly.com/valenzuela-justinejurel/30min' })}
               className="hidden md:inline-flex items-center bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-200 shadow-lg shadow-indigo-600/20 hover:shadow-indigo-500/30"
             >
-              Hire me
-            </a>
+              Book a Call
+            </button>
             <button
               onClick={() => setOpen(o => !o)}
               className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
@@ -95,13 +95,12 @@ export default function Nav({ theme, onToggleTheme }) {
             </a>
           ))}
           <div className="pt-3 pb-1 flex flex-col gap-2">
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="block text-center bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-3 rounded-xl transition-all"
+            <button
+              onClick={() => { setOpen(false); window.Calendly?.initPopupWidget({ url: 'https://calendly.com/valenzuela-justinejurel/30min' }) }}
+              className="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-3 rounded-xl transition-all"
             >
-              Hire me
-            </a>
+              Book a Call
+            </button>
           </div>
         </div>
       </div>

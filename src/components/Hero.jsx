@@ -39,12 +39,12 @@ export default function Hero() {
             See my work
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
           </a>
-          <a
-            href="#contact"
+          <button
+            onClick={() => window.Calendly?.initPopupWidget({ url: 'https://calendly.com/valenzuela-justinejurel/30min' })}
             className="inline-flex items-center gap-2 text-gray-300 hover:text-white border border-white/10 hover:border-white/25 font-medium px-7 py-3.5 rounded-xl transition-all duration-200 backdrop-blur-sm"
           >
-            Get in touch
-          </a>
+            Book a Call
+          </button>
         </div>
 
         {/* Stats */}
